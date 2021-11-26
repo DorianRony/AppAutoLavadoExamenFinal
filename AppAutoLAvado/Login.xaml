@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppAutoLAvado.Login"
+             Title="Log In"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="logo.jpg"  Aspect="AspectFill"  Opacity="0.3"/>
+            <!-- AspectFill va a llenar en toda la pantalla la imagen que asignamos-->
+            
+
+            <Grid>
+                <!--Definimos las filas-->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <!--No tenemos columnas per si filas en la filas 0 definimos una imagen -->
+                <Image Grid.Row="0" Source="autolavado_img1.png" WidthRequest="100" HeightRequest="100" Margin="0,50,0,30" />
+                
+                <StackLayout Grid.Row="1" Padding="20,20" >
+
+                    <Entry x:Name="txtUsuario" Placeholder="Usuario" PlaceholderColor="Black" TextColor="Black" VerticalTextAlignment="Center"  FontSize="Large" Margin="40,100,40,0"/>
+                    <Entry  x:Name="txtPassword" Placeholder="Password" PlaceholderColor="Black" TextColor="Black" VerticalTextAlignment="Center" IsPassword="True" FontSize="Large" Margin="40,0,40,0"/>
+                    
+                    <Button x:Name="btnLogIn" Text="Ingresar" BackgroundColor="Black" FontSize="Large"   TextColor="White"  Margin="40,50,40,0" Clicked="btnLogIn_Clicked"/>
+
+                </StackLayout>
+                <StackLayout Grid.Row="2" HorizontalOptions="Center" Margin="0,0,0,50">
+                    <Button Text="Registrate aqui" x:Name="btnRegistrate" Clicked="btnRegistrate_Clicked"/>
+                    <Label Text="Registrate con:" FontSize="Medium" TextColor="Black"  />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Image Grid.Row="0" Source="logoGoogle.png" HeightRequest="45" />
+                        
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </Grid>
+               
+    </ContentPage.Content>
+</ContentPage>

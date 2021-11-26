@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppAutoLAvado.Reservas" NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label x:Name="lblTipo" FontSize="20" HorizontalTextAlignment="Center"/>
+            <Label x:Name="lblReserva" FontSize="20" HorizontalTextAlignment="Center"/>
+            <ListView x:Name="ListaReservas" ItemSelected="ListaReservas_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Pedido:"/>
+                                    <Label Text="{Binding idReserva}"/>
+                                    <Label Text="Cliente:"/>
+                                    <Label Text="{Binding cliente.nombre}"/>
+                                    <Label Text="Fecha:"/>
+                                    <Label Text="{Binding fecha}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Tipo:"/>
+                                    <Label Text="{Binding fecha}"/>
+                                    <Label Text="Valor:"/>
+                                    <Label Text="{Binding valor}"/>
+                                    <Label Text="$"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="btnNuevo" Text="Nueva Reserva" Clicked="btnNuevo_Clicked"/>
+            <Button x:Name="btnSalir" Text="Salir" Clicked="btnSalir_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

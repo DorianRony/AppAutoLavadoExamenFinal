@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppAutoLAvado.Reserva"
+             Title="Reservas" NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <Grid>
+                <!--Definimos las filas-->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <StackLayout Grid.Row="0" Margin="10" Padding="10" >
+
+                    <Label Text="Ingrese el dia que desea reservar" HorizontalOptions="Center" FontSize="Large" TextColor="Black" Margin="10,30" />
+                    <DatePicker x:Name="fechaPicker"  HorizontalOptions="Center" TextColor="Black" DateSelected="fechaPicker_DateSelected"  />
+                    <TimePicker x:Name="timePicker" HorizontalOptions="Center" Format="T" PropertyChanged="timePicker_PropertyChanged" />
+
+                    <Label  Text="Su reserva esta programada para la fecha:" TextColor="Black" HorizontalOptions="Center" />
+                    <Label  x:Name="lblFecha"  HorizontalOptions="Center" TextColor="Black"/>
+                    <!--Text="Su reserva esta programada para"-->
+
+
+                    <Label Text="Seleccione uno o varios servicios que usted desee por favor" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Large" TextColor="Black" Margin="10,50" />
+
+                    <Grid>
+                        <!--Definimos las filas-->
+                        <Grid.RowDefinitions>
+                            
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            
+                        </Grid.ColumnDefinitions>
+
+                        <RadioButton x:Name="chLavCompleto" Content="Lavado completo del Auto" TextColor="Black" Grid.Row="0" Grid.ColumnSpan="2" IsChecked="False" GroupName="opcion" />
+
+                        <RadioButton x:Name="chLavadoExpres"  Content="Lavado Expres del Auto" TextColor="Black" Grid.Row="1" Grid.ColumnSpan="2" IsChecked="False" GroupName="opcion"/>
+
+                        <RadioButton x:Name="chLavadoNormal" Content="Lavado y Aspirado del Auto" Grid.Row="2" Grid.ColumnSpan="2" IsChecked="False" GroupName="opcion"/>
+
+                        <CheckBox x:Name="chAceite" Grid.Row="3" IsChecked="False"/>
+                        <Label x:Name="lblAceite" TextColor="Black" Text="Cambio de Aceite" FontSize="Large" Grid.Row="3" Grid.Column="1" />  
+
+                        <Button x:Name="btnAcptar" Text="Aceptar" Clicked="btnAcptar_Clicked"  Grid.Row="5" Grid.Column="1"/>
+
+                    </Grid>
+                 
+                    
+
+                </StackLayout>
+            </Grid>
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>

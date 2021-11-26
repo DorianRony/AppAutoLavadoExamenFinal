@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppAutoLAvado.MainPage"
+             Title="App de pruebas">
+    <StackLayout>
+
+        <StackLayout.Resources>
+
+            <ResourceDictionary>
+                <!--Style  TargetType="Button">
+                    <Setter Property="FontSize" Value="20"/>
+                    <Setter Property="BackgroundColor" Value="Blue"/>
+                    <Setter Property="Margin" Value="10"/>
+
+                </Style-->
+                <Style x:Key="EstiloEntry" TargetType="Entry">
+                    <Style.Triggers>
+                        <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+                            <Setter Property="TextColor" Value="Brown"/>
+                            <Setter Property="FontSize" Value="20"/>
+                            <Setter Property="Margin" Value="10"/>
+                        </Trigger>
+
+                    </Style.Triggers>
+                </Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger TargetType="Button" Binding="{Binding Text.Length, Source={x:Reference mensaje}}" Value="0">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>                   
+                    </Style.Triggers>
+                </Style>
+            </ResourceDictionary>
+        </StackLayout.Resources>
+        <!--Button Text="boton1"  />
+        <Button Text="boton2"   />
+        <Button Text="boton3"  /-->
+        <Label Text="ingresa el texto" HorizontalOptions="Center"/>
+        <Entry x:Name="mensaje" Text=""/>
+        <Button Text="Enviar"/>
+        <Entry Style="{StaticResource EstiloEntry}" Placeholder="ecribe aqui"/>
+        <Entry Style="{StaticResource EstiloEntry}" Placeholder="ecribe aca"/>
+        <Entry Style="{StaticResource EstiloEntry}" Placeholder="ecribe por aca"/>
+    </StackLayout>
+    
+    
+        
+</ContentPage>
+
+
+<!--StackLayout>
+    <StackLayout.Resources>
+        <ResourceDictionary>
+            <Style x:Key="EstiloBoton" TargetType="Button">
+                <Setter Property="WidthRequest" Value="120"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="BorderWidth" Value="10"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="BackgroundColor" Value="LawnGreen"/>
+                <Setter Property="CornerRadius" Value="2"/>
+
+            </Style>
+            <Style x:Key="EstiloBase" BasedOn="{StaticResource EstiloBoton}" TargetType="Button">
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="CornerRadius" Value="5"/>
+                <Setter Property="BackgroundColor" Value="Yellow"/>
+            </Style>
+        </ResourceDictionary>
+    </StackLayout.Resources>
+    <Button Style="{StaticResource EstiloBoton}" Text="OK"/>
+    <Frame HasShadow="True"/>
+    <Button Style="{StaticResource EstiloBase}" Text="Registrate"/>
+</StackLayout-->
